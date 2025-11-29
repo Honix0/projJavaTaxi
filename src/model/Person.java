@@ -3,14 +3,14 @@ package model;
 import java.time.LocalDate;
 
 public class Person {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private LocalDate birthDate ;
-    private String sex;
-    private String email;
-    private String phoneNumber;
-    private String passwordHash;
+    public int id;
+    public String firstName;
+    public String lastName;
+    public LocalDate birthDate ;
+    public String sex;
+    public String email;
+    public String phoneNumber;
+    public String passwordHash;
 
     public Person(int id , String firstName , String lastName, LocalDate birthDate, String sex, String email, String phoneNumber, String passwordHash) {
         this.id = id;

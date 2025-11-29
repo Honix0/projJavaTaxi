@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 public class Payment {
     private String paymentId;
     private double amount;
-    // private PaymentMethod paymentMethod;
     private boolean isPaid;
     private LocalDateTime paymentDate;
     private String transactionId;
