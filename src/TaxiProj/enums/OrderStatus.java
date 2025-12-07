@@ -10,8 +10,16 @@ public enum OrderStatus {
     private final String description;
     private final String detailedDescription;
 
-    OrderStatus(String description, String detailedDescription) {
+    private OrderStatus(String description, String detailedDescription) {
         this.description = description;
         this.detailedDescription = detailedDescription;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getDetailedDescription() {
+        return this.detailedDescription;
     }
 }
