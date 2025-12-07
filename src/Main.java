@@ -1,7 +1,7 @@
 import enums.Languages;
 import model.Administrator;
 import model.Driver;
-import model.Klient;
+import model.Client;
 import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Main {
     public static Languages.Language currentLang = Languages.Language.PL;
 
     // Переместили klienty сюда - теперь доступна во всех методах
-    private static ArrayList<Klient> klienty = new ArrayList<>();
+    private static ArrayList<Client> klienty = new ArrayList<>();
     private static ArrayList<Administrator> admins = new ArrayList<>();
     private static ArrayList<Driver> drivers = new ArrayList<>();
 
@@ -23,13 +23,13 @@ public class Main {
 
         // Adding Clients
 
-        Klient Klient1 = new Klient(1, "Maksym", "Zawodnik", java.time.LocalDate.of(2006, 1, 12), "Man", "suka@gmail.com",
+        Client Client1 = new Client(1, "Maksym", "Zawodnik", java.time.LocalDate.of(2006, 1, 12), "Man", "suka@gmail.com",
                 "999999999", "12345");
-        Klient Klient2 = new Klient(2, "Nikita", "Zotkin", java.time.LocalDate.of(2015, 3, 15), "Woman", "suka2@gmail.com",
+        Client Client2 = new Client(2, "Nikita", "Zotkin", java.time.LocalDate.of(2015, 3, 15), "Woman", "suka2@gmail.com",
                 "333333333", "12345");
 
-        klienty.add(Klient1);
-        klienty.add(Klient2);
+        klienty.add(Client1);
+        klienty.add(Client2);
 
         // Adding Admins
 
@@ -56,11 +56,11 @@ public class Main {
         while (true) {
             System.out.println(Languages.MENU.get(Main.currentLang));
             System.out.println("1. " + Languages.REGISTER.get(Main.currentLang));
-            System.out.println("2. Pokaż wszystkich klientów");
-            System.out.println("3. Zaloguj się do profilu");
-            System.out.println("4. Zmienić Język" );
-            System.out.println("5. Wyjść z aplikacji");
-            System.out.print("Wybierz opcję: ");
+            System.out.println("2. " + Languages.SHOW_ALL_USERS.get(Main.currentLang));
+            System.out.println("3. " + Languages.LOGIN.get(Main.currentLang));
+            System.out.println("4. " + Languages.CHANGE_LANGUAGE.get(Main.currentLang));
+            System.out.println("5. " + Languages.EXIT.get(Main.currentLang));
+            System.out.print(Languages.CHOOSE_OPTION.get(Main.currentLang));
 
             int choise = scanner.nextInt();
             scanner.nextLine();
@@ -89,16 +89,15 @@ public class Main {
     }
 
     public static void zmienicJezyk(Scanner scanner) {
-        System.out.println("\n=== WYBÓR JĘZYKA / LANGUAGE SELECTION ===");
+        System.out.println(Languages.LANGUAGE_SELECTION.get(Main.currentLang));
 
-        // выводим список языков
         int index = 1;
         for (Languages.Language lang : Languages.Language.values()) {
             System.out.println(index + ". " + lang);
             index++;
         }
 
-        System.out.print("Wybierz język: ");
+        System.out.print(Languages.CHOOSE_LANGUAGE.get(Main.currentLang));
 
         try {
             int choice = scanner.nextInt();
@@ -150,12 +149,12 @@ public class Main {
         String password = scanner.nextLine();
 
         // Создаём клиента
-        Klient klient = new Klient(id, firstName, lastName, birthDate,
+        Client client = new Client(id, firstName, lastName, birthDate,
                 sex, email, phoneNumber, password);
-        klienty.add(klient);
+        klienty.add(client);
 
         System.out.println("Klient zarejestrowany ");
-        System.out.println(klient.getFirstName() + " " + klient.getLastName());
+        System.out.println(client.getFirstName() + " " + client.getLastName());
     }
 
     // dodelat'
@@ -171,7 +170,7 @@ public class Main {
         if (klienty.isEmpty()) {
             System.out.println("Brak zarejestrowanych klientów");
         } else {
-            for (Klient k : klienty) {
+            for (Client k : klienty) {
                 System.out.println("Imie: " + k.getFirstName() + ", Nazwisko: " + k.getLastName() + ", Email: " + k.getEmail() + ", Phone Number: " + k.getPhoneNumber());
             }
         }
@@ -185,7 +184,7 @@ public class Main {
         System.out.print("Hasło: ");
         String password = scanner.nextLine();
 
-        for (Klient k : klienty) {
+        for (Client k : klienty) {
             if (k.getEmail().equals(email) && k.getPasswordHash().equals(password)) {
                 System.out.println("Zalogowano pomyślnie! " + k.getFirstName() + " " + k.getLastName());
                 return;
