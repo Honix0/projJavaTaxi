@@ -1,15 +1,22 @@
 package model;
 
 public class StandardCar extends Car {
-    public StandardCar(int id, String brand, String plateNumber, String color, int year, double pricePerDay) {
-        super(id, brand, plateNumber, color, year, pricePerDay);
+
+    // Конструктор
+    public StandardCar(int id, String brand, String plateNumber, String color, int year, double pricePerKm) {
+        super(id, brand, plateNumber, color, year, pricePerKm);
     }
 
-    public double calculateFinalCost(int days) {
-        return this.getPricePerDay() * (double)days;
+    // ЛОГИКА ТАКСИ: Считаем цену за километры
+    @Override
+    public double calculatePrice(double km) {
+        double startFee = 5.0; // Цена за посадку (5 злотых)
+        // Формула: Посадка + (Цена за км * расстояние)
+        return startFee + (this.getPricePerKm() * km);
     }
 
+    @Override
     public String toString() {
-        return super.toString() + " -> [STANDARD]";
+        return super.toString() + " -> [ECONOMY TAXI]";
     }
 }

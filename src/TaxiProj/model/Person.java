@@ -23,40 +23,34 @@ public abstract class Person {
         this.passwordHash = passwordHash;
     }
 
-    public int getId() {
-        return this.id;
+    // --- ГЕТТЕРЫ (Чтение) ---
+    public int getId() { return this.id; }
+    public String getFirstName() { return this.firstName; }
+    public String getLastName() { return this.lastName; }
+    public LocalDate getBirthDate() { return this.birthDate; }
+    public String getSex() { return this.sex; }
+    public String getEmail() { return this.email; }
+    public String getPhoneNumber() { return this.phoneNumber; }
+    public String getPasswordHash() { return this.passwordHash; }
+
+    // --- СЕТТЕРЫ (Изменение данных - полезно для проекта) ---
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getLastName() {
-        return this.lastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public LocalDate getBirthDate() {
-        return this.birthDate;
-    }
-
-    public String getSex() {
-        return this.sex;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
-
-    public String getPasswordHash() {
-        return this.passwordHash;
-    }
-
+    // --- АБСТРАКТНЫЙ МЕТОД ---
     public abstract String getRole();
 
+    // --- TO STRING ---
+    @Override
     public String toString() {
         return this.id + ": " + this.firstName + " " + this.lastName + " (" + this.email + ")";
     }

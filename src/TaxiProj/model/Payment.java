@@ -17,6 +17,7 @@ public class Payment {
         this.paymentDate = null;
     }
 
+    // --- Геттеры (оставляем без изменений) ---
     public String getPaymentId() {
         return this.paymentId;
     }
@@ -37,14 +38,23 @@ public class Payment {
         return this.transactionId;
     }
 
+    // --- Логика оплаты (Сообщения на польском) ---
     public void processPayment() {
         this.isPaid = true;
         this.paymentDate = LocalDateTime.now();
-        System.out.println("Оплата прошла успешно! Транзакция: " + this.transactionId);
+        // Было: "Оплата прошла успешно..."
+        // Стало: "Płatność zakończona sukcesem..."
+        System.out.println("Płatność zakończona sukcesem! ID Transakcji: " + this.transactionId);
     }
 
+    // --- Вывод информации (Сообщения на польском) ---
+    @Override
     public String toString() {
-        String var10000 = this.paymentId;
-        return "Квитанция [ID='" + var10000 + "', Сумма=" + this.amount + ", Оплачено=" + (this.isPaid ? "ДА" : "НЕТ") + ", Дата=" + String.valueOf(this.paymentDate != null ? this.paymentDate : "Ожидание") + "]";
+        return "Płatność [" +
+                "ID='" + paymentId + '\'' +
+                ", Kwota=" + amount +
+                ", Zapłacono=" + (isPaid ? "TAK" : "NIE") +
+                ", Data=" + (paymentDate != null ? paymentDate : "Oczekiwanie") +
+                "]";
     }
 }

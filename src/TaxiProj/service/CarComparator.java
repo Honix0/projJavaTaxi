@@ -1,13 +1,12 @@
 package service;
 
-import java.util.Comparator;
 import model.Car;
+import java.util.Comparator;
 
 public class CarComparator implements Comparator<Car> {
-    public CarComparator() {
-    }
 
+    @Override
     public int compare(Car car1, Car car2) {
-        return car1.getBrand().compareTo(car2.getBrand());
+        return Double.compare(car1.getPricePerKm(), car2.getPricePerKm());
     }
 }

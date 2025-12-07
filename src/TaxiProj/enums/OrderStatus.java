@@ -22,4 +22,5 @@ public enum OrderStatus {
     public String getDetailedDescription() {
         return this.detailedDescription;
     }
+
 }

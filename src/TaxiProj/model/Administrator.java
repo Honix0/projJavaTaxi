@@ -1,5 +1,3 @@
-
-
 package model;
 
 import java.time.LocalDate;
@@ -12,20 +10,22 @@ public class Administrator extends Person {
         this.adminCode = adminCode;
     }
 
-    public String getAdminCode() {
-        return this.adminCode;
-    }
+        public String getAdminCode() {
+            return this.adminCode;
+        }
 
-    public void setAdminCode(String adminCode) {
-        this.adminCode = adminCode;
-    }
+        public void setAdminCode(String adminCode) {
+            this.adminCode = adminCode;
+        }
 
+    @Override
     public String getRole() {
         return "ADMINISTRATOR";
     }
 
+    @Override
     public String toString() {
-        String var10000 = super.toString();
-        return var10000 + " [ADMIN] (Код доступа: " + this.adminCode + ")";
+        // Убрали var10000 и перевели на польский
+        return super.toString() + " [ADMIN] (Kod dostępu: " + this.adminCode + ")";
     }
 }
