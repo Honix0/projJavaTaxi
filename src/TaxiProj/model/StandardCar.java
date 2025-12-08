@@ -8,13 +8,11 @@ public class StandardCar extends Car {
         super(id, brand, plateNumber, color, year, pricePerKm, CarType.STANDARD);
     }
 
-    @Override
     public double calculatePrice(double km) {
         double startFee = 5.0;
         return startFee + (this.getPricePerKm() * km);
     }
 
-    @Override
     public String toString() {
         return super.toString();
     }

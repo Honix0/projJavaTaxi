@@ -136,7 +136,7 @@ public class Menu {
         System.out.print(Languages.ENTER_PASS.get(currentLanguage));
         String password = scanner.nextLine();
 
-        int newId = (clients.size() + drivers.size() + admins.size()) + 100;
+        int newId = (clients.size() + drivers.size() + admins.size()) + 1;
 
         if (roleChoice.equals("1")) {
             System.out.print("City: ");
@@ -313,7 +313,7 @@ public class Menu {
     }
 
     private void orderTaxi() throws TaxiException {
-        System.out.println("\n--- " + Languages.ORDER_TAXI.get(currentLanguage) + " ---");
+        System.out.println("\n" + Languages.ORDER_TAXI.get(currentLanguage) + "");
         System.out.print(Languages.ENTER_ADDRESS.get(currentLanguage));
         String destination = scanner.nextLine();
 
