@@ -18,14 +18,13 @@ public class Administrator extends Person {
             this.adminCode = adminCode;
         }
 
-    @Override
     public String getRole() {
         return "ADMINISTRATOR";
     }
 
-    @Override
+
     public String toString() {
-        // Убрали var10000 и перевели на польский
-        return super.toString() + " [ADMIN] (Kod dostępu: " + this.adminCode + ")";
+
+        return super.toString() + " ADMIN (Kod dostępu: " + this.adminCode + ")";
     }
 }

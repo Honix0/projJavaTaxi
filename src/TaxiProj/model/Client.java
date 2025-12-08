@@ -7,7 +7,7 @@ import java.util.List;
 public class Client extends Person {
 
     private String address;
-    // Добавляем список для хранения истории поездок
+
     private List<String> rideHistory = new ArrayList<>();
 
     public Client(int id, String firstName, String lastName, LocalDate birthDate, String sex, String email, String phoneNumber, String passwordHash, String address) {
@@ -23,16 +23,12 @@ public class Client extends Person {
         this.address = address;
     }
 
-    // --- НОВЫЕ МЕТОДЫ ДЛЯ ИСТОРИИ ---
-
-    // Добавить поездку в историю
     public void addRideToHistory(String rideDetails) {
         rideHistory.add(rideDetails);
     }
 
-    // Показать историю
     public void printHistory() {
-        System.out.println("\n--- TWOJA HISTORIA PRZEJAZDÓW ---");
+        System.out.println("\nTWOJA HISTORIA PRZEJAZDÓW");
         if (rideHistory.isEmpty()) {
             System.out.println("Brak odbytych przejazdów.");
         } else {
@@ -42,13 +38,11 @@ public class Client extends Person {
         }
     }
 
-    @Override
     public String getRole() {
         return "CLIENT";
     }
 
-    @Override
     public String toString() {
-        return super.toString() + " [KLIENT] (Adres: " + this.address + ")";
+        return super.toString() + " KLIENT (Adres: " + this.address + ")";
     }
 }

@@ -23,7 +23,6 @@ public abstract class Person {
         this.passwordHash = passwordHash;
     }
 
-    // --- ГЕТТЕРЫ (Чтение) ---
     public int getId() { return this.id; }
     public String getFirstName() { return this.firstName; }
     public String getLastName() { return this.lastName; }
@@ -33,7 +32,6 @@ public abstract class Person {
     public String getPhoneNumber() { return this.phoneNumber; }
     public String getPasswordHash() { return this.passwordHash; }
 
-    // --- СЕТТЕРЫ (Изменение данных - полезно для проекта) ---
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -46,11 +44,9 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    // --- АБСТРАКТНЫЙ МЕТОД ---
+
     public abstract String getRole();
 
-    // --- TO STRING ---
-    @Override
     public String toString() {
         return this.id + ": " + this.firstName + " " + this.lastName + " (" + this.email + ")";
     }

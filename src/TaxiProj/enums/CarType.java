@@ -10,8 +10,8 @@ public enum CarType {
     private final String description;
     private final int maxPassengers;
     private final String detailedDescription;
-    private final int minTrunkCapacity; // Minimalna pojemność bagażnika w litrach
-    private final boolean availableForShortTrips; // Czy dostępny dla krótkich tras
+    private final int minTrunkCapacity;
+    private final boolean availableForShortTrips;
 
     CarType(String description, int maxPassengers, String detailedDescription, int minTrunkCapacity, boolean availableForShortTrips) {
         this.description = description;
@@ -21,7 +21,6 @@ public enum CarType {
         this.availableForShortTrips = availableForShortTrips;
     }
 
-    // --- ВАЖНО: ДОБАВИТЬ ЭТИ ГЕТТЕРЫ ---
     public String getDescription() {
         return description;
     }
