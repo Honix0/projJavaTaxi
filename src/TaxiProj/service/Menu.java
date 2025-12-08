@@ -60,7 +60,7 @@ public class Menu {
 
     //AUTORYZACJA
     private boolean showAuthMenu() {
-        System.out.println("\n=== " + Languages.WELCOME.get(currentLanguage) + " ===");
+        System.out.println("\n" + Languages.WELCOME.get(currentLanguage) + "");
         System.out.println("1. " + Languages.LOGIN.get(currentLanguage));
         System.out.println("2. " + Languages.REGISTER.get(currentLanguage));
         System.out.println("3. " + Languages.CHANGE_LANGUAGE.get(currentLanguage));
@@ -82,7 +82,7 @@ public class Menu {
     }
 
     private void login() {
-        System.out.println("\n--- " + Languages.LOGIN.get(currentLanguage) + " ---");
+        System.out.println("\n" + Languages.LOGIN.get(currentLanguage) + "");
         System.out.print(Languages.ENTER_EMAIL.get(currentLanguage));
         String email = scanner.nextLine();
         System.out.print(Languages.ENTER_PASS.get(currentLanguage));
@@ -113,7 +113,7 @@ public class Menu {
     }
 
     private void register() {
-        System.out.println("\n--- " + Languages.REGISTER.get(currentLanguage) + " ---");
+        System.out.println("\n" + Languages.REGISTER.get(currentLanguage) + "");
         System.out.println(Languages.CHOOSE_ROLE.get(currentLanguage));
         System.out.println(Languages.ROLE_CLIENT.get(currentLanguage));
         System.out.println(Languages.ROLE_DRIVER.get(currentLanguage));
