@@ -1,8 +1,16 @@
 package model;
 
 import java.time.LocalDate;
+import service.IPrintable; // Wymaganie: #13
 
-public abstract class Person {
+// Klasa abstrakcyjna, implementuje IPrintable.
+// Wymaganie: #3 Klasa abstrakcyjna, #2 (Hierarchia #1), #13 (IPrintable)
+public abstract class Person implements IPrintable {
+
+    // Wymaganie: #6 Dwa pola statyczne
+    private static int nextId = 1; // Pole statyczne #1: Licznik ID
+    public static final String DEFAULT_SEX = "N/A"; // Pole statyczne #2: Stała
+
     private int id;
     private String firstName;
     private String lastName;
@@ -21,6 +29,11 @@ public abstract class Person {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.passwordHash = passwordHash;
+    }
+
+    // Wymaganie: #6 Metoda statyczna #1
+    public static int generateNextId() { // Wymaganie: #12 Metoda z funkcjonalnością
+        return nextId++;
     }
 
     public int getId() { return this.id; }
@@ -44,10 +57,16 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-
+    // Wymaganie: #3 Metoda abstrakcyjna #1
     public abstract String getRole();
 
+    // Wymaganie: #10 Nadpisana metoda toString
     public String toString() {
         return this.id + ": " + this.firstName + " " + this.lastName + " (" + this.email + ")";
+    }
+
+    // Wymaganie: #13 Implementacja metody z interfejsu
+    public String getShortInfo() { // Wymaganie: #12 Metoda z funkcjonalnością
+        return "ID: " + this.id + ", Rola: " + getRole();
     }
 }

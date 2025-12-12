@@ -1,5 +1,9 @@
 package enums;
 
+/**
+ * Enum statusów zamówienia.
+ * Wymaganie: #19 Użycie enum
+ */
 public enum OrderStatus {
     PENDING("Oczekujące", "Zamówienie oczekuje na akceptację kierowcy"),
     ACCEPTED("Zaakceptowane", "Kierowca zaakceptował zamówienie"),
@@ -22,5 +26,4 @@ public enum OrderStatus {
     public String getDetailedDescription() {
         return this.detailedDescription;
     }
-
 }

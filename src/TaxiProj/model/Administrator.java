@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class Administrator extends Person {
+public class Administrator extends Person { // Wymaganie: #2 (Hierarchia Person)
     private String adminCode;
 
     public Administrator(int id, String firstName, String lastName, LocalDate birthDate, String sex, String email, String phoneNumber, String passwordHash, String adminCode) {
@@ -10,21 +10,20 @@ public class Administrator extends Person {
         this.adminCode = adminCode;
     }
 
-        public String getAdminCode() {
-            return this.adminCode;
-        }
+    public String getAdminCode() {
+        return this.adminCode;
+    }
 
-        public void setAdminCode(String adminCode) {
-            this.adminCode = adminCode;
-        }
+    public void setAdminCode(String adminCode) {
+        this.adminCode = adminCode;
+    }
 
     public String getRole() {
         return "ADMINISTRATOR";
     }
 
-
+    // Wymaganie: #10 Nadpisana metoda toString
     public String toString() {
-
         return super.toString() + " ADMIN (Kod dostępu: " + this.adminCode + ")";
     }
 }

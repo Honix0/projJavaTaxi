@@ -1,5 +1,9 @@
 package enums;
 
+/**
+ * Enum definiujący typy samochodów i ich podstawowe parametry.
+ * Wymaganie: #19 Użycie enum
+ */
 public enum CarType {
     STANDARD("Standard", 4, "Ekonomiczny samochód osobowy", 300, true),
     PREMIUM("Premium", 4, "Luksusowy samochód z dodatkowymi udogodnieniami", 400, true),
@@ -25,18 +29,22 @@ public enum CarType {
         return description;
     }
 
+    // Wymaganie: #12 Metoda z funkcjonalnością (wywoływana w Menu.orderTaxi)
     public int getMaxPassengers() {
         return maxPassengers;
     }
 
+    // Wymaganie: #12 Metoda z funkcjonalnością (wywoływana w Menu.showCars)
     public String getDetailedDescription() {
         return detailedDescription;
     }
 
+    // Wymaganie: #12 Metoda z funkcjonalnością (wywoływana w Menu.orderTaxi)
     public int getMinTrunkCapacity() {
         return minTrunkCapacity;
     }
 
+    // Wymaganie: #12 Metoda z funkcjonalnością (wywoływana w Menu.orderTaxi)
     public boolean isAvailableForShortTrips() {
         return availableForShortTrips;
     }
